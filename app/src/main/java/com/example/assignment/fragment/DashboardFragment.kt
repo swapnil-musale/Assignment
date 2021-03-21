@@ -9,11 +9,10 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.assignment.R
-import com.example.assignment.model.TabItem
 import com.example.assignment.adapter.TabRecyclerViewAdapter
 import com.example.assignment.databinding.FragmentDashboardBinding
+import com.example.assignment.model.TabItem
 import com.example.assignment.util.gone
-import com.example.assignment.util.setSafeOnClickListener
 import com.example.assignment.util.show
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 
@@ -97,11 +96,11 @@ class DashboardFragment : Fragment() {
     }
 
     private fun setClickListeners() {
-        goNextLayout.setSafeOnClickListener {
+        goNextLayout.setOnClickListener {
             scrollViewPager(viewBinding.viewPager.currentItem.plus(1))
         }
 
-        goBackLayout.setSafeOnClickListener {
+        goBackLayout.setOnClickListener {
             scrollViewPager(viewBinding.viewPager.currentItem.minus(1))
         }
     }
