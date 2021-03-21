@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment.R
-import com.example.assignment.TabItem
+import com.example.assignment.model.TabItem
 import com.example.assignment.fragment.DashboardFragment
 import kotlinx.android.synthetic.main.tab_recyclerview_item_layout.view.*
 

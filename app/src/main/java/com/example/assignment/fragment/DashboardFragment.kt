@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.assignment.R
-import com.example.assignment.TabItem
+import com.example.assignment.model.TabItem
 import com.example.assignment.adapter.TabRecyclerViewAdapter
 import com.example.assignment.databinding.FragmentDashboardBinding
 import com.example.assignment.util.gone

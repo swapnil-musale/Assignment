@@ -1,4 +1,4 @@
-package com.example.assignment.util
+package com.example.assignment.model
 
 import androidx.fragment.app.Fragment
 

@@ -85,6 +85,10 @@ class GoalInfoFragment : Fragment(), DatePickerDialog.OnDateSetListener {
             showDateSelectionDialog()
         }
 
+        selectDOB.setSafeOnClickListener {
+            showDateSelectionDialog()
+        }
+
         addMoreButton.setSafeOnClickListener {
             Toast.makeText(requireContext(), "Add More Clicked", Toast.LENGTH_LONG).show()
         }
@@ -95,9 +99,12 @@ class GoalInfoFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         popupMenu.inflate(R.menu.menu)
         popupMenu.setOnMenuItemClickListener { item ->
             when (item.itemId) {
-                R.id.self -> viewBinding.investmentIsForTextView.text = "Who is this investment for - SELF"
-                R.id.wife -> viewBinding.investmentIsForTextView.text = "Who is this investment for - WIFE"
-                R.id.family -> viewBinding.investmentIsForTextView.text = "Who is this investment for - FAMILY"
+                R.id.self -> viewBinding.investmentIsForTextView.text =
+                    "Who is this investment for - SELF"
+                R.id.wife -> viewBinding.investmentIsForTextView.text =
+                    "Who is this investment for - WIFE"
+                R.id.family -> viewBinding.investmentIsForTextView.text =
+                    "Who is this investment for - FAMILY"
             }
             false
         }
@@ -114,7 +121,8 @@ class GoalInfoFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         )
 
         datePickerDialog.setOnShowListener {
-            val buttonColor = ResourceUtils.getColor(requireContext(),
+            val buttonColor = ResourceUtils.getColor(
+                requireContext(),
                 R.color.black
             )
             datePickerDialog.getButton(DatePickerDialog.BUTTON_POSITIVE).setTextColor(buttonColor)
@@ -128,6 +136,9 @@ class GoalInfoFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         val selectedMonth = month.plus(1)
         val selectedDate = "$dayOfMonth/$selectedMonth/$year"
 
-        viewBinding.selectPurchaseDateTextView.text = selectedDate
+        if (viewBinding.knowYouLayout.visibility == View.VISIBLE)
+            viewBinding.selectDOB.text = selectedDate
+        else
+            viewBinding.selectPurchaseDateTextView.text = selectedDate
     }
 }

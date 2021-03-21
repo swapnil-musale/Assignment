@@ -9,7 +9,7 @@ import com.example.assignment.fragment.ProfileFragment
 import com.example.assignment.fragment.SettingsFragment
 import com.example.assignment.util.CommonToolBarView
 import com.example.assignment.util.CommonViewPagerAdapter
-import com.example.assignment.util.ViewPagerItem
+import com.example.assignment.model.ViewPagerItem
 import com.example.assignment.util.setSafeOnClickListener
 import kotlinx.android.synthetic.main.activity_main.*
 
